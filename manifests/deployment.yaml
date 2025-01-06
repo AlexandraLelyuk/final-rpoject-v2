@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sandra-main-app
+  namespace: sandra-namespace
+  labels:
+    app: sandra-main-app
+spec:
+  replicas: 3
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: sandra-main-app
+  template:
+    metadata:
+      labels:
+        app: sandra-main-app
+    spec:
+      containers:
+      - name: sandra-main-container
+        image: sandral17/python-server:v1.0.2
+        imagePullPolicy: Always
+        ports:
+       
