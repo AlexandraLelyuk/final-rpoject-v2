@@ -1,27 +1,25 @@
-data "aws_route53_zone" "zone" {
+data "aws_route53_zone" "sandra_dns_zone" {
   name         = var.zone_name
   private_zone = false
 }
 
-locals {
-  domain_name = "${var.name}.${var.zone_name}"
-}
-
-module "acm" {
+module "sandra_acm" {
   source  = "terraform-aws-modules/acm/aws"
   version = "~> 3.0"
 
-  domain_name = local.domain_name
-  zone_id     = data.aws_route53_zone.zone.zone_id
+  domain_name = "${var.cluster_name}.${var.zone_name}"
+  zone_id     = data.aws_route53_zone.sandra_dns_zone.zone_id
 
   subject_alternative_names = [
-    "*.${local.domain_name}",
+    "*.${var.cluster_name}.${var.zone_name}"
   ]
 
   wait_for_validation = true
 
   tags = merge(
     var.tags,
-    { Name = "${var.name}-eks" }
+    {
+      Name = "${var.cluster_name}-acm"
+    }
   )
 }
