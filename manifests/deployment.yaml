@@ -1,27 +1,34 @@
-apiVersion: apps/v1 
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sandra-main-app
+  name: sandra-app
   namespace: sandra-app
   labels:
-    app: sandra-main-app
+    app: sandra-app
 spec:
-  replicas: 3
-  revisionHistoryLimit: 1
+  replicas: 2
+  revisionHistoryLimit: 0
   selector:
     matchLabels:
-      app: sandra-main-app
+      app: sandra-app
   template:
     metadata:
       labels:
-        app: sandra-main-app
+        app: sandra-app
     spec:
       containers:
-      - name: sandra-main-container
+      - name: sandra-app
         image: sandral17/python-server:latest
         imagePullPolicy: Always
         ports:
-          - containerPort: 5000
+        - containerPort: 5000
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "64Mi"
+          limits:
+            cpu: "200m"
+            memory: "128Mi"
         livenessProbe:
           httpGet:
             path: /
