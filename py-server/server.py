@@ -1,9 +1,7 @@
 from flask import Flask, render_template_string
 
 app = Flask(__name__)
-
-# Версия приложения
-VERSION = "1.0.3"  # Укажите новую версию
+VERSION = "1.0.3"  
 MESSAGE = "Hello from Sandra! Welcome to my special app 💖."
 
 @app.route('/')
