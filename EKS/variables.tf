@@ -1,17 +1,17 @@
 variable "cluster_name" {
-  description = "Имя EKS кластера"
+  description = "ім'я EKS кластеру"
   type        = string
   default     = "sandra-cluster"
 }
 
 variable "vpc_id" {
-  description = "ID VPC, в которой создаём EKS"
+  description = "ID VPC, де свторюю EKS"
   type        = string
   default     = "vpc-0fe31270afbc347a8" 
 }
 
 variable "subnets_ids" {
-  description = "Список подсетей (public/private) для EKS и рабочих нод"
+  description = "Список підмереж (public/private) для EKS та робочих нод"
   type        = list(string)
   default     = [
     "subnet-04854c9f3de4fab00", # us-east-1a
@@ -21,7 +21,7 @@ variable "subnets_ids" {
 }
 
 variable "tags" {
-  description = "Список/Map тегов для ресурсов"
+  description = "Список/Map тегов для ресурсів"
   type        = map(string)
   default     = {
     Environment = "dev"
@@ -36,7 +36,7 @@ variable "region" {
 }
 
 variable "iam_profile" {
-  description = "AWS profile для аутентификации"
+  description = "AWS profile для аутентифікації"
   type        = string
   default     = "default"
 }

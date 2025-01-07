@@ -2,8 +2,9 @@ from flask import Flask, render_template_string
 
 app = Flask(__name__)
 
-VERSION = "1.0.2"
-MESSAGE = "Welcome to the main page!"
+# Версия приложения
+VERSION = "1.0.3"  # Укажите новую версию
+MESSAGE = "Hello from Sandra! Welcome to my special app 💖."
 
 @app.route('/')
 def home():
@@ -18,7 +19,7 @@ def home():
             body {
                 font-family: "Segoe UI", sans-serif;
                 text-align: center;
-                background-color: #f9f9f9;
+                background-color: #fff0f5;
                 color: #555;
                 margin: 0;
                 padding: 0;
@@ -26,11 +27,12 @@ def home():
             h1 {
                 color: #ff69b4;
                 margin-top: 50px;
+                font-size: 3em;
             }
             .message {
                 font-size: 18px;
                 margin-bottom: 20px;
-                color: #888;
+                color: #8b008b;
             }
             .buttons {
                 display: flex;
@@ -59,14 +61,14 @@ def home():
         </style>
     </head>
     <body>
-        <h1>Welcome!</h1>
+        <h1>Hello, Sandra!</h1>
         <p class="message">{{ message }}</p>
         <p>Version: {{ version }}</p>
         <div class="buttons">
-            <a href="/page1" class="button">Go to Page 1</a>
-            <a href="/page2" class="button">Go to Page 2</a>
+            <a href="/page1" class="button">Visit Page 1</a>
+            <a href="/page2" class="button">Visit Page 2</a>
         </div>
-        <footer>© 2025 Sandra's Project</footer>
+        <footer>© 2025 Sandra's App 💖</footer>
     </body>
     </html>
     """
@@ -85,17 +87,17 @@ def page1():
             body {
                 font-family: "Segoe UI", sans-serif;
                 text-align: center;
-                background-color: #fce4ec;
+                background-color: #ffebf0;
                 color: #444;
                 margin: 0;
                 padding: 0;
             }
             h1 {
-                color: #e91e63;
+                color: #ff69b4;
                 margin-top: 50px;
             }
             a {
-                color: #e91e63;
+                color: #ff69b4;
                 text-decoration: none;
                 font-weight: bold;
             }
@@ -125,7 +127,7 @@ def page2():
             body {
                 font-family: "Segoe UI", sans-serif;
                 text-align: center;
-                background-color: #e3f2fd;
+                background-color: #e6f7ff;
                 color: #444;
                 margin: 0;
                 padding: 0;

@@ -14,7 +14,7 @@ spec:
     namespace: sandra-app
   syncPolicy:
     automated:
-      prune: true         # Удаление устаревших ресурсов
-      selfHeal: true      # Автоматическое восстановление синхронизации
+      prune: true         
+      selfHeal: true
     syncOptions:
     - CreateNamespace=true

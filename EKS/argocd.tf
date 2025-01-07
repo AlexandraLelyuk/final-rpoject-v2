@@ -1,8 +1,3 @@
-############################################################
-# ARGO CD INSTALLATION
-# Файл для установки ArgoCD через Helm.
-############################################################
-
 resource "helm_release" "sandra_argocd" {
   name             = "sandra-argocd"
   repository       = "https://argoproj.github.io/argo-helm"

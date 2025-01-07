@@ -1,7 +1,3 @@
-############################################################
-# EKS WORKER NODES
-############################################################
-
 resource "aws_eks_node_group" "sandra_node_group" {
   cluster_name    = aws_eks_cluster.sandra.name
   node_group_name = "${var.cluster_name}-workers"
