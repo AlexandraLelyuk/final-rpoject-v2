@@ -13,6 +13,8 @@ spec:
     server: 'https://kubernetes.default.svc'
     namespace: sandra-app
   syncPolicy:
-    automated: {}
+    automated:
+      prune: true         # Удаление устаревших ресурсов
+      selfHeal: true      # Автоматическое восстановление синхронизации
     syncOptions:
     - CreateNamespace=true
