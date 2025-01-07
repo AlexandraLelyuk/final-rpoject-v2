@@ -1,8 +1,8 @@
-apiVersion: apps/v1
+apiVersion: apps/v1 
 kind: Deployment
 metadata:
   name: sandra-main-app
-  namespace: sandra-namespace
+  namespace: sandra-app
   labels:
     app: sandra-main-app
 spec:
@@ -18,7 +18,19 @@ spec:
     spec:
       containers:
       - name: sandra-main-container
-        image: sandral17/python-server:v1.0.2
+        image: sandral17/python-server:latest
         imagePullPolicy: Always
         ports:
-       
+          - containerPort: 5000
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 5000
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 5000
+          initialDelaySeconds: 5
+          periodSeconds: 10

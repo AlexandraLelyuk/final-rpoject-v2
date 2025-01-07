@@ -6,8 +6,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/AlexandraLelyuk/final-rpoject-v2'
-    path: EKS/argocd
+    repoURL: 'https://github.com/AlexandraLelyuk/final-rpoject-v2.git'
+    path: manifests
     targetRevision: main
   destination:
     server: 'https://kubernetes.default.svc'
