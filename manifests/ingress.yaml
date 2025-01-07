@@ -4,10 +4,10 @@ metadata:
   name: sandra-app-ingress
   namespace: sandra-app
   annotations:
-    kubernetes.io/ingress.class: "nginx"
+    kubernetes.io/ingress.class: nginx
 spec:
   rules:
-  - host: sandra-app.devops4.test-danit.com
+  - host: app.sandra.devops4.test-danit.com
     http:
       paths:
       - path: /
@@ -16,4 +16,4 @@ spec:
           service:
             name: sandra-app-service
             port:
-              number: 80
+              number: 5000
