@@ -5,6 +5,7 @@ metadata:
   namespace: sandra-app
   annotations:
     kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
   - host: app.sandra.devops4.test-danit.com
